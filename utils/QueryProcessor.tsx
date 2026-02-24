@@ -26,6 +26,12 @@ export default function QueryProcessor(query: string): string {
     var nums2 = nums.split(",");
     return Math.max(parseInt(nums2[0]), parseInt(nums2[1]), parseInt(nums2[2])).toString();
   }
+
+  if (query.toLowerCase().includes("multiplied") && query.toLowerCase().includes("plus")) {
+    var split = query.split(" ");
+    var ans = parseInt(split[2]) * parseInt(split[5]) + parseInt(split[7]);
+    return ans.toString();
+  }
   
 
   if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
