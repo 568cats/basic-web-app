@@ -23,5 +23,11 @@ export default function QueryProcessor(query: string): string {
     return "33";
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    var split = query.split(" ");
+    var sum = parseInt(split[2]) + parseInt(split[4]);
+    return sum.toString();
+  }
+
   return "";
 }
