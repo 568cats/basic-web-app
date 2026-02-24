@@ -92,8 +92,7 @@ export default function QueryProcessor(query: string): string {
 
   if (query.toLowerCase().includes("power")) {
     var split = query.split(" ");
-    var sum = Math.pow(parseInt(split[2]), parseInt(split[7]));
-    return sum.toString();
+    return BigInt(Math.pow(parseInt(split[2]), parseInt(split[7]))).toString();
   }
 
   return "";
