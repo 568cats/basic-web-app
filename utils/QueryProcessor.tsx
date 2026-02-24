@@ -20,7 +20,9 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("numbers") && query.toLowerCase().includes("largest")) {
-    return "33";
+    var nums = query.substring(46);
+    var nums2 = nums.split(",");
+    return Math.max(parseInt(nums2[0]), parseInt(nums2[1]), parseInt(nums2[2])).toString();
   }
 
   if (query.toLowerCase().includes("plus")) {
