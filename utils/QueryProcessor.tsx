@@ -59,7 +59,7 @@ export default function QueryProcessor(query: string): string {
     return sum.toString();
   }
 
-  function isPrime(n) {
+  function isPrime(n: number) {
     for (let j = 2; j < n; j++) {
       if (n % j === 0) return false;
     }
