@@ -45,9 +45,15 @@ export default function QueryProcessor(query: string): string {
     return sum.toString();
   }
 
+  if (query.toLowerCase().includes("divided")) {
+    var split = query.split(" ");
+    var sum = parseInt(split[2]) / parseInt(split[5]);
+    return sum.toString();
+  }
+
   if (query.toLowerCase().includes("minus")) {
     var split = query.split(" ");
-    var sum = parseInt(split[2]) * parseInt(split[4]);
+    var sum = parseInt(split[2]) - parseInt(split[4]);
     return sum.toString();
   }
 
