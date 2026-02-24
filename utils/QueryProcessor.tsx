@@ -1,3 +1,5 @@
+import { textChangeRangeIsUnchanged } from "typescript";
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -55,6 +57,25 @@ export default function QueryProcessor(query: string): string {
     var split = query.split(" ");
     var sum = parseInt(split[2]) - parseInt(split[4]);
     return sum.toString();
+  }
+
+  function isPrime(n) {
+    for (let j = 2; j < n; j++) {
+      if (n % j === 0) return false;
+    }
+    return true;
+  }
+
+  if (query.toLowerCase().includes("primes")) {
+    var nums = query.substring(42, query.length - 1);
+    var nums2 = nums.split(",");
+    var ans=0;
+    for (var i=0; i < nums2.length; i++) {
+      if (isPrime(parseInt(nums2[i]))) {
+        ans = parseInt(nums2[i]);
+      }
+    }
+    return ans.toString();
   }
 
   if (query.toLowerCase().includes("plus")) {
