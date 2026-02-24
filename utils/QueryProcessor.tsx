@@ -24,17 +24,19 @@ export default function QueryProcessor(query: string): string {
     var nums2 = nums.split(",");
     return Math.max(parseInt(nums2[0]), parseInt(nums2[1]), parseInt(nums2[2])).toString();
   }
-  /*
+  
 
   if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
     var nums = query.substring(59, query.length - 1);
     var nums2 = nums.split(",");
     var ans=0;
     for (var i=0; i < nums2.length; i++) {
-
+      if (Math.sqrt(parseInt(nums2[i])) % 1 === 0 && Math.cbrt(parseInt(nums2[i])) % 1 === 0) {
+        ans = parseInt(nums2[i]);
+      }
     }
     return ans.toString();
-  }*/
+  }
 
 
   if (query.toLowerCase().includes("multiplied")) {
